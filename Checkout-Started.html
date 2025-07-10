@@ -1,0 +1,1186 @@
+<style>
+@media only screen and (max-width: 550px) {
+.fullwidth {
+width: 100% !important;
+}
+
+.heightauto {
+height: auto !important;
+}
+
+.imgfullwidth {
+width: 100% !important;
+height: auto !important;
+}
+
+.halfwidth {
+width: 50% !important;
+}
+
+.quarterwidth {
+width: 33% !important;
+}
+
+}
+</style>
+
+{% if event|lookup:'Item Count' == 0 %}
+
+{% elif event|lookup:'Item Count' == 1 %}
+{% with item1=event.extra.line_items.0 %}
+{% catalog item1.product.id integration="api" catalog_id="1406287" %}
+<table width="600" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;" align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="600" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="600" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="600"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ event.extra.line_items.0.product.images.0.src }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.0.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+{% endcatalog %}
+{% endwith %}
+
+
+
+{% elif event|lookup:'Item Count' == 2 %}
+<table width="540" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;" align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+{% with item1=event.extra.line_items.0 %}
+{% catalog item1.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.0.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item2=event.extra.line_items.1 %}
+{% catalog item2.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.1.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+{% elif event|lookup:'Item Count' == 3 %}
+<table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px;" align="center">
+<table width="600" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;"
+align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+{% with item1=event.extra.line_items.0 %}
+{% catalog item1.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding-top:1px;padding-bottom:2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.0.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item2=event.extra.line_items.1 %}
+{% catalog item2.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding: 1px 0px 2px 0px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.1.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item3=event.extra.line_items.2 %}
+{% catalog item3.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding-top:1px;padding-bottom:2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.2.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+{% elif event|lookup:'Item Count' == 4 %}
+<table width="540" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;" align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+{% with item1=event.extra.line_items.0 %}
+{% catalog item1.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.0.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item2=event.extra.line_items.1 %}
+{% catalog item2.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.1.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<table width="540" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;" align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+{% with item3=event.extra.line_items.2 %}
+{% catalog item3.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.2.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item4=event.extra.line_items.3 %}
+{% catalog item4.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.3.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+{% else %}
+
+
+
+
+<table width="540" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;" align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+{% with item1=event.extra.line_items.0 %}
+{% catalog item1.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.0.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.0.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item2=event.extra.line_items.1 %}
+{% catalog item2.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="halfwidth" align="center">
+<table width="300" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0"
+border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="300" style="height: 66px;" role="presentation"
+class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr>
+<td style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+class="heightauto" align="center">
+<a href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank" rel="noopener">
+<img width="300"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto" class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}"> </a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.1.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.1.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px;" align="center">
+<table width="600" role="presentation" class="fullwidth" cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+<tr>
+<td valign="top" style="font-size: 1px; line-height: 1px; vertical-align: top;"
+align="center">
+<table width="100%" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+{% with item3=event.extra.line_items.2 %}
+{% catalog item3.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding-top:1px;padding-bottom:2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.2.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.2.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item4=event.extra.line_items.3 %}
+{% catalog item4.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding: 1px 0px 2px 0px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.3.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.3.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+{% with item5=event.extra.line_items.4 %}
+{% catalog item5.product.id integration="api" catalog_id="1406287" unpublished="cancel" %}
+<td valign="top"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="quarterwidth" align="center">
+<table width="200" role="presentation" class="fullwidth" cellspacing="0"
+cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td valign="top"
+style="padding-top:1px;padding-bottom:2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+class="fullwidth" align="center">
+<table width="200" style="height: 66px;"
+role="presentation" class="fullwidth"
+cellspacing="0" cellpadding="0" border="0"
+align="center">
+<tbody>
+
+<tr style="height: 20px;">
+<td style="font-size: 1px;line-height: 1px;height: 20px;"
+class="heightauto" align="center"><a
+href="{{ event.extra.responsive_checkout_url}}"
+style="color:#191919; text-decoration:none; display:inline-block"
+class="imgfullwidth" target="_blank"
+rel="noopener">
+<img width="200"
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 12px; line-height: 16px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+height="auto"
+class="imgfullwidth" border="0"
+alt="{{ catalog_item.title }}">
+</a></td>
+</tr>
+<tr>
+<td valign="top"
+style="font-size: 1px; line-height: 1px; padding: 6px 16px 2px 2px; vertical-align: top; height: 10px;"
+height="10" align="left">
+<p style="mso-line-height-rule:exactly; margin:0; line-height:10px; font-family:Diatype Regular, Helvetica, Arial, sans-serif; font-size:8px; text-transform:uppercase; color:#070707; font-weight:normal; text-decoration:none"
+align="left">
+{{ catalog_item.title }}</p>
+</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; padding: 0px 0px 20px 2px;"
+align="left" height="10">
+{% if event.extra.line_items.4.compare_at_price %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #EA0000; font-weight: bold; text-decoration: none;"
+align="left">
+<span
+style="color: #000000; text-decoration: line-through;">{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.4.compare_at_price }}</span>
+&nbsp;&nbsp;{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.4.line_price }}0
+</p>
+{% else %}
+<p style="mso-line-height-rule: exactly; margin: 0; line-height: 10px; font-family: Diatype Bold,Helvetica,Arial,sans-serif; font-size: 8px; color: #000000; font-weight: bold; text-decoration: none;"
+align="left">
+{% if event|lookup:'extra'|lookup:'presentment_currency' == 'GBP' %}&pound;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'CNY' %}&yen;{% elif event|lookup:'extra'|lookup:'presentment_currency' == 'EUR' %}&euro;{% else %}${% endif %}{{ event.extra.line_items.4.line_price }}0
+</p>
+{% endif %}
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+{% endcatalog %}
+{% endwith %}
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+{% endif %}
