@@ -1,0 +1,170 @@
+<div>{% with columns=3 product_feed=feeds.RecommendedEcom|slice:9 %}</div>
+<style>
+@font-face {
+font-family: "Diatype Regular";
+src: url('https://cdn.shopify.com/s/files/1/0614/9813/0651/files/ABCDiatype-Regular.woff2?v=1695118957');
+font-weight: normal;
+font-style: normal;
+mso-font-alt: 'Arial'
+}
+
+@font-face {
+font-family: "Diatype Bold";
+src: url('https://cdn.shopify.com/s/files/1/0614/9813/0651/files/ABCDiatype-Bold.woff2?v=1695118809');
+font-weight: bold;
+font-style: bold;
+mso-font-alt: 'Arial'
+}
+
+@media only screen and (max-width: 550px) {
+.fullwidth {
+width: 100% !important;
+}
+
+.heightauto {
+height: auto !important;
+}
+
+.imgfullwidth {
+width: 100% !important;
+height: auto !important;
+}
+
+.quarterwidth {
+width: 33% !important;
+}
+
+}
+</style>
+<table role="presentation" border="0" width="100%" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px;" align="center">
+<table class="fullwidth" role="presentation" border="0" width="600" cellspacing="0" cellpadding="0"
+align="center">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; vertical-align: top;"
+align="center" valign="top">
+<table class="fullwidth" role="presentation" border="0" width="100%" cellspacing="0"
+cellpadding="0" align="center">
+<tbody>
+<tr>{% for item in product_feed %}
+<td class="quarterwidth"
+style="font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">{% catalog item.item_id integration="api" catalog_id="1406287" %}
+<table class="fullwidth" role="presentation" border="0" width="198"
+cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+{% if forloop.counter == 1 %}
+<td class="fullwidth"
+style="padding: 0px 2px 2px 0px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 2 %}
+<td class="fullwidth"
+style="padding: 0px 1px 2px 1px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 3 %}
+<td class="fullwidth"
+style="padding: 0px 0px 2px 2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 4 %}
+<td class="fullwidth"
+style="padding: 1px 2px 2px 0px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 5 %}
+<td class="fullwidth"
+style="padding: 1px 1px 2px 1px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 6 %}
+<td class="fullwidth"
+style="padding: 1px 0px 2px 2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 7 %}
+<td class="fullwidth"
+style="padding: 1px 2px 0px 0px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 8 %}
+<td class="fullwidth"
+style="padding: 1px 1px 0px 1px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %} 
+{% if forloop.counter == 9 %}
+<td class="fullwidth"
+style="padding: 1px 0px 0px 2px;font-size: 1px; line-height: 1px; border-color: transparent!important; vertical-align: top; mso-line-height-rule: at-least;"
+align="center" valign="top">
+{% endif %}
+<table class="fullwidth" style="height: 66px;"
+role="presentation" border="0" width="198"
+cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr style="height: 20px;">
+<td class="heightauto"
+style="padding: 0px; font-size: 1px; line-height: 1px; height: 20px;"
+align="center"><a
+href="{{ catalog_item.url }}"
+style="text-decoration: none; display: inline-block;"
+class="imgfullwidth"> 
+{% if forloop.counter == 1 or forloop.counter == 6 or forloop.counter == 8 %}
+
+    {% if catalog_item.metadata.email_vogue_images %}
+    <img
+    class="imgfullwidth "
+    style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+    src="{{ catalog_item.metadata.email_vogue_images }}"
+    alt="{{ catalog_item.title }}"
+    width="198" height="auto"
+    border="0"> 
+    {% else %}
+    <img
+    class="imgfullwidth "
+    style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+    src="{{ catalog_item.metadata.email_ecom_images }}"
+    alt="{{ catalog_item.title }}"
+    width="198" height="auto"
+    border="0"> 
+    {% endif %}
+
+
+{% else %}
+<img
+class="imgfullwidth "
+style="display: inline-block; font-family: Helvetica,Arial,sans-serif; font-size: 10px; line-height: 14px; color: #828282; font-weight: bold; text-decoration: none;"
+src="{{ catalog_item.metadata.email_ecom_images }}"
+alt="{{ catalog_item.title }}"
+width="198" height="auto"
+border="0"> 
+{% endif %}
+</a></td>
+</tr>
+
+</tbody>
+</table>
+
+</td>
+
+</tr>
+</tbody>
+</table>
+{% endcatalog %}</td>
+{% if forloop.counter|divisibleby:columns %}</tr>
+<tr>{% endif %} {% endfor %}</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div>{% endwith %}</div>
